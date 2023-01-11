@@ -20,9 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1922958752, guid: 6ce11cc3527d4a84abc0a45e3287948d, type: 3}
+      value: {fileID: 1676341994, guid: b90cee8fdce19484480a98f81445d910, type: 3}
     attribute: m_Sprite
     path: 
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: -1962901462, guid: 66aa25aa8b69c1e4b88637266d9186da, type: 3}
+    attribute: m_Sprite
+    path: clown_outfit
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -39,8 +46,16 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1506120188
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1922958752, guid: 6ce11cc3527d4a84abc0a45e3287948d, type: 3}
+    - {fileID: 1676341994, guid: b90cee8fdce19484480a98f81445d910, type: 3}
+    - {fileID: -1962901462, guid: 66aa25aa8b69c1e4b88637266d9186da, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
