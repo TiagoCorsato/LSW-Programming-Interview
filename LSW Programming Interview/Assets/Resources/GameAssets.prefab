@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   s_clownOutfit: {fileID: 21300000, guid: 30cdaca71e758ff43bf0ee8fad0f6915, type: 2}
+  s_spookyOutfit: {fileID: 21300000, guid: a4bc2636f47466148b48edf2a2898f85, type: 2}
+  s_witchOutfit: {fileID: 21300000, guid: b274af8e069d0504da20f116aaed5444, type: 2}

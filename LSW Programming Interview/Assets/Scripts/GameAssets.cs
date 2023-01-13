@@ -16,4 +16,6 @@ public class GameAssets : MonoBehaviour
     }
 
     public Sprite s_clownOutfit;
+    public Sprite s_spookyOutfit;
+    public Sprite s_witchOutfit;
 }

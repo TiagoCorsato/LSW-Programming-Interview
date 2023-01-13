@@ -10,6 +10,11 @@ public class CharacterCustomization : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    [Header("ExampleName: char1_walk_0")]
+    public string currentSpriteName;
+    [Header("ExampleName: char1_walk_")]
+    public string oldSpriteName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +35,10 @@ public class CharacterCustomization : MonoBehaviour
 
     void SkinChoice()
     {
-        if(spriteRenderer.sprite.name.Contains("char1_walk_0"))
+        if(spriteRenderer.sprite.name.Contains(currentSpriteName))
         {
             string spriteName = spriteRenderer.sprite.name;
-            spriteName = spriteName.Replace("char1_walk_", "");
+            spriteName = spriteName.Replace(oldSpriteName, "");
             int spriteNr = int.Parse(spriteName);
 
             spriteRenderer.sprite = skins[skinNr].sprites[spriteNr];

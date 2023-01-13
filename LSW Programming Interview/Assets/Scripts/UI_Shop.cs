@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using CodeMonkey.Utils;
 using TMPro;
 using UnityEngine;
@@ -5,21 +6,39 @@ using UnityEngine.UI;
 
 public class UI_Shop : MonoBehaviour
 {
-    private Transform container;
+    public Transform container;
     private Transform shopItemTemplate;
     private IShopCustomer shopCustomer;
 
+    private PlayerInventory playerInventory;
+
+    public List<InventorySlot> shopList = new List<InventorySlot>();
+
     private void Awake()
     {
-        container = transform.Find("container");
-        shopItemTemplate = container.Find("shopItemTemplate");
+        //container = transform.Find("container");
+        //shopItemTemplate = container.Find("shopItemTemplate");
         shopItemTemplate.gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        CreateItemButton(Item.ItemType.clownOutfit, Item.GetSprite(Item.ItemType.clownOutfit),
+        /*CreateItemButton(Item.ItemType.clownOutfit, Item.GetSprite(Item.ItemType.clownOutfit),
                 "Clown Outfit", Item.GetCost(Item.ItemType.clownOutfit), 0);
+
+        CreateItemButton(Item.ItemType.spookyOutfit, Item.GetSprite(Item.ItemType.spookyOutfit),
+                "Spooky Outfit", Item.GetCost(Item.ItemType.spookyOutfit), 3);
+
+        CreateItemButton(Item.ItemType.witchOutfit, Item.GetSprite(Item.ItemType.witchOutfit),
+                "Witch Outfit", Item.GetCost(Item.ItemType.witchOutfit), 6);*/
+
+
+        foreach(InventorySlot item in shopList)
+        {
+            item.GetComponent<Button_UI>().ClickFunc = () => {
+                ;
+            };
+        }
 
         Hide();
     }
@@ -38,15 +57,21 @@ public class UI_Shop : MonoBehaviour
 
         shopItemTransform.Find("itemImage").GetComponent<Image>().sprite = itemSprite;
 
-        shopItemTransform.GetComponent<Button_UI>().ClickFunc = () =>
-        {
+        shopItemTransform.GetComponent<Button_UI>().ClickFunc = () => {
             TryBuyItem(itemType);
         };
     }
 
-    public void TryBuyItem(Item.ItemType itemType)
+    private void TryBuyItem(Item.ItemType itemType)
     {
-        shopCustomer.BoughtItem(itemType);
+        if(shopCustomer.TrySpendGoldAmount(Item.GetCost(itemType)))
+        {
+            shopCustomer.BoughtItem(itemType);
+        }
+        else
+        {
+            //Cant afford it!
+        }
     }
 
     public void Show(IShopCustomer shopCustomer)
@@ -59,5 +84,6 @@ public class UI_Shop : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
 
 }
