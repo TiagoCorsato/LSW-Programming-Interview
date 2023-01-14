@@ -9,6 +9,16 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent interactAction;
 
+    public GameObject alert_Interact;
+
+    Player player;
+
+    private void Start()
+    {
+        alert_Interact.SetActive(false);
+        player = FindObjectOfType<Player>();
+    }
+
     private void Update()
     {
         if(isInRange)
@@ -16,6 +26,7 @@ public class Interactable : MonoBehaviour
             if(Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
+                //player.PickUpAnimation();
             }
         }
     }
@@ -25,6 +36,7 @@ public class Interactable : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
+            alert_Interact.SetActive(true);
         }
     }
 
@@ -33,6 +45,7 @@ public class Interactable : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
+            alert_Interact.SetActive(false);
         }
     }
 }

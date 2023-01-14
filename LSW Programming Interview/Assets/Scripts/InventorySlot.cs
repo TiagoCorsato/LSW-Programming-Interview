@@ -5,16 +5,24 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+    public bool clown, spooky, witch;
+
     public Item1 item;
 
     public TextMeshProUGUI itemName;
     public Image itemSprite;
     public GameObject itemCost;
 
+    public GameObject wearButton;
+
+    public Button_UI buyButton;
+
     //public GameObject inventorySlotPrefab;
 
     public bool isBuyabble;
     public bool isSellable;
+
+    public bool isClothes;
 
     Player player;
     PlayerInventory playerInventory;
@@ -25,27 +33,42 @@ public class InventorySlot : MonoBehaviour
         player = FindObjectOfType<Player>();
         playerInventory = FindObjectOfType<PlayerInventory>();
         uiShop = FindObjectOfType<UI_Shop>();
+
+        //buyButton.gameObject.SetActive(false);
+        wearButton.SetActive(false);
     }
 
     void Update()
     {
-        if(itemName.GetComponent<TextMeshProUGUI>() != null)
-        {
-            Debug.Log("Tem texto!");
-        }
-
-        //itemName.text = item.itemName.ToString();
+        itemName.text = item.itemName;
         itemSprite.sprite = item.itemSprite;
-        item.itemCost = int.Parse(itemCost.GetComponent<TextMeshProUGUI>().text);
+        itemCost.GetComponent<TextMeshProUGUI>().text = item.itemCost.ToString();
 
+        if(uiShop.gameObject.activeSelf)
+        {
+            //buyButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            //buyButton.gameObject.SetActive(false);
+        }
 
         if(isBuyabble)
         {
-            this.GetComponent<Button_UI>().ClickFunc = () => Buy();
+            buyButton.ClickFunc = () => Buy();
         }
         else if(isSellable)
         {
-            this.GetComponent<Button_UI>().ClickFunc = () => Sell();
+            buyButton.ClickFunc = () => Sell();
+        }
+
+        if(isSellable && isClothes)
+        {
+            wearButton.SetActive(true);
+        }
+        else
+        {
+            wearButton.SetActive(false);
         }
     }
 
@@ -56,15 +79,54 @@ public class InventorySlot : MonoBehaviour
             player.goldAmount = player.goldAmount - item.itemCost;
             playerInventory.inventoryList.Add(this);
             playerInventory.UpdateInventoryUI(this.gameObject);
-            uiShop.shopList.Remove(this);
         }
     }
 
     public void Sell()
     {
         playerInventory.inventoryList.Remove(this);
-        uiShop.shopList.Add(this);
         player.goldAmount = player.goldAmount + item.itemCost;
         Destroy(this.gameObject);
+    }
+
+    public void WearClothing()
+    {
+        //Wear clothes
+        Debug.Log("Im wearing cholthes");
+
+        foreach (GameObject clothing in playerInventory.clothesList)
+        {
+            if(clown && clothing.name == "clown_outfit")
+            {
+                for (var i = 0; i < playerInventory.clothesList.Count; i++)
+                {
+                    playerInventory.clothesList[i].gameObject.SetActive(false);
+                    playerInventory.blackBox.SetActive(false);
+                }
+                clothing.SetActive(true);
+            }
+
+            if(spooky && clothing.name == "spooky_outfit")
+            {
+
+                for (var i = 0; i < playerInventory.clothesList.Count; i++)
+                {
+                    playerInventory.clothesList[i].gameObject.SetActive(false);
+                    playerInventory.blackBox.SetActive(false);
+                }
+                clothing.SetActive(true);
+            }
+
+            if(witch && clothing.name == "witch_outfit")
+            {
+
+                for (var i = 0; i < playerInventory.clothesList.Count; i++)
+                {
+                    playerInventory.clothesList[i].gameObject.SetActive(false);
+                    playerInventory.blackBox.SetActive(false);
+                }
+                clothing.SetActive(true);
+            }
+        }
     }
 }

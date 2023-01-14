@@ -7,6 +7,13 @@ public class Player : MonoBehaviour, IShopCustomer
 
     public TextMeshProUGUI goldText;
 
+    public Animator anim;
+
+    void Update()
+    {
+        goldText.text = goldAmount.ToString();
+    }
+
     public void BoughtItem(Item.ItemType itemType)
     {
         Debug.Log("Bought item: " + itemType);
@@ -23,5 +30,10 @@ public class Player : MonoBehaviour, IShopCustomer
         {
             return false;
         }
+    }
+
+    public void PickUpAnimation()
+    {
+        anim.Play("player_PickUp");
     }
 }

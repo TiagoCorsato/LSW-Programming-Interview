@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd549dc60e25c4149ad4a2251a2ae540, type: 3}
   m_Name: SpookyOutfit
   m_EditorClassIdentifier: 
-  itemName: 
-  itemSprite: {fileID: 0}
-  itemCost: 0
+  itemName: Spooky Outfit
+  itemSprite: {fileID: 21300000, guid: a4bc2636f47466148b48edf2a2898f85, type: 2}
+  itemCost: 60

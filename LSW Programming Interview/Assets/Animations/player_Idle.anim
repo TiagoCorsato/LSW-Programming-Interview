@@ -27,6 +27,13 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
+      value: {fileID: 784044261, guid: bb143c7d1014e514abc434fa5ab38b2f, type: 3}
+    attribute: m_Sprite
+    path: bob_hair
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
       value: {fileID: -1962901462, guid: 66aa25aa8b69c1e4b88637266d9186da, type: 3}
     attribute: m_Sprite
     path: clown_outfit
@@ -34,23 +41,16 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 784044261, guid: bb143c7d1014e514abc434fa5ab38b2f, type: 3}
-    attribute: m_Sprite
-    path: bob_walk_0
-    classID: 212
-    script: {fileID: 0}
-  - curve:
-    - time: 0
       value: {fileID: 2092111679, guid: ad984c7329f4c89409896910ce89ffad, type: 3}
     attribute: m_Sprite
-    path: spooky_walk_0
+    path: spooky_outfit
     classID: 212
     script: {fileID: 0}
   - curve:
     - time: 0
       value: {fileID: 357515639, guid: 36a9fab21ba775e40b66c9fc8c9d9f7e, type: 3}
     attribute: m_Sprite
-    path: witch_walk_0
+    path: witch_outfit
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -68,6 +68,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 3369995501
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 1506120188
       attribute: 0
       script: {fileID: 0}
@@ -75,21 +82,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 1861005855
+      path: 4105490689
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 3951663210
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 3502031539
+      path: 3481373656
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -97,8 +97,8 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 1676341994, guid: b90cee8fdce19484480a98f81445d910, type: 3}
-    - {fileID: -1962901462, guid: 66aa25aa8b69c1e4b88637266d9186da, type: 3}
     - {fileID: 784044261, guid: bb143c7d1014e514abc434fa5ab38b2f, type: 3}
+    - {fileID: -1962901462, guid: 66aa25aa8b69c1e4b88637266d9186da, type: 3}
     - {fileID: 2092111679, guid: ad984c7329f4c89409896910ce89ffad, type: 3}
     - {fileID: 357515639, guid: 36a9fab21ba775e40b66c9fc8c9d9f7e, type: 3}
   m_AnimationClipSettings:
