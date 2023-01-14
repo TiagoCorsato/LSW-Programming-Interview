@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IShopCustomer
+public class Player : MonoBehaviour
 {
     public int goldAmount;
 
@@ -12,11 +12,6 @@ public class Player : MonoBehaviour, IShopCustomer
     void Update()
     {
         goldText.text = goldAmount.ToString();
-    }
-
-    public void BoughtItem(Item.ItemType itemType)
-    {
-        Debug.Log("Bought item: " + itemType);
     }
 
     public bool TrySpendGoldAmount(int spendGoldAmount)

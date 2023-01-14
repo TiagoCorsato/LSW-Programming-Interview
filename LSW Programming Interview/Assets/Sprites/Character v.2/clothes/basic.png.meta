@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -45957,12 +45957,12 @@ TextureImporter:
       basic_1156: -988269874
       basic_1488: -937436387
       basic_580: -1180699752
-      basic_274: 542168691
       basic_921: 2063711668
+      basic_2173: 1524742495
       basic_1858: -2098556192
       basic_324: 855670668
       basic_1601: 1382290393
-      basic_2173: 1524742495
+      basic_274: 542168691
       basic_1315: -1357249311
       basic_732: 544311515
       basic_794: -508610424
@@ -46942,18 +46942,17 @@ TextureImporter:
       basic_1294: -1429387388
       basic_1754: -40421907
       basic_1293: 221689509
+      basic_1433: 656885071
       basic_679: 2111776577
       basic_1131: -1666618273
       basic_242: -180389128
-      basic_1926: 813215495
       basic_1690: 1417763254
       basic_1696: 130170005
       basic_618: -418227739
       basic_1113: 873901545
+      basic_652: 827196864
       basic_1803: -1329479829
       basic_2052: -438109041
-      basic_1433: 656885071
-      basic_652: 827196864
       basic_312: -931359080
       basic_1202: 178519447
       basic_1695: 1438485799
@@ -46961,10 +46960,11 @@ TextureImporter:
       basic_2058: -1669179645
       basic_1494: 409182571
       basic_59: 831273890
+      basic_1926: 813215495
       basic_144: 1553795845
-      basic_285: -1564303378
       basic_2178: -918253821
       basic_1002: 292566190
+      basic_285: -1564303378
       basic_680: 1823970059
       basic_536: -608175131
       basic_2044: 1020006425
@@ -47085,8 +47085,9 @@ TextureImporter:
       basic_1555: -293761409
       basic_152: -700420964
       basic_833: 1787499406
-      basic_1339: -661180577
       basic_1374: 1124350752
+      basic_1339: -661180577
+      basic_1698: 777419082
       basic_908: -752540039
       basic_90: 862907920
       basic_1031: -733701779
@@ -47100,7 +47101,6 @@ TextureImporter:
       basic_937: -1290522312
       basic_1862: -1713437525
       basic_1565: -1360394892
-      basic_1698: 777419082
       basic_981: -804229864
       basic_810: -807429209
       basic_24: 663758157
@@ -47112,22 +47112,22 @@ TextureImporter:
       basic_2000: -693376708
       basic_1548: 495536888
       basic_1255: 1535207013
-      basic_394: 755646843
+      basic_1773: 1840618967
       basic_1457: -886197813
       basic_1676: -1765867641
-      basic_2064: 1149484293
+      basic_394: 755646843
       basic_622: -1367248858
+      basic_2085: -1811855677
       basic_326: 349934365
       basic_1428: -1641219732
-      basic_2085: -1811855677
-      basic_1773: 1840618967
       basic_1470: 1795606541
       basic_730: -216953330
       basic_390: 1133138258
-      basic_740: -641189562
+      basic_2064: 1149484293
       basic_455: 1430651008
       basic_2103: -1852042137
       basic_1786: 2072488243
+      basic_740: -641189562
       basic_1889: -1229619247
       basic_1430: 1480643134
       basic_1450: 1830672102
@@ -47199,8 +47199,8 @@ TextureImporter:
       basic_853: -2080127867
       basic_1848: -620432901
       basic_701: 361746175
-      basic_595: -1081415257
       basic_1393: -1671023438
+      basic_595: -1081415257
       basic_712: 247014698
       basic_198: -362926701
       basic_741: 555514234

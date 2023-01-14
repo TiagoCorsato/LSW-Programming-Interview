@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class InventorySlot : MonoBehaviour
 {
     public bool clown, spooky, witch;
@@ -27,9 +28,11 @@ public class InventorySlot : MonoBehaviour
     Player player;
     PlayerInventory playerInventory;
     UI_Shop uiShop;
+    SoundManager soundManager;
 
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         player = FindObjectOfType<Player>();
         playerInventory = FindObjectOfType<PlayerInventory>();
         uiShop = FindObjectOfType<UI_Shop>();
@@ -53,15 +56,6 @@ public class InventorySlot : MonoBehaviour
             //buyButton.gameObject.SetActive(false);
         }
 
-        if(isBuyabble)
-        {
-            buyButton.ClickFunc = () => Buy();
-        }
-        else if(isSellable)
-        {
-            buyButton.ClickFunc = () => Sell();
-        }
-
         if(isSellable && isClothes)
         {
             wearButton.SetActive(true);
@@ -72,21 +66,36 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
-    public void Buy()
+    public void ItemAction()
     {
-        if(player.goldAmount >= item.itemCost)
+        if(isBuyabble)
         {
-            player.goldAmount = player.goldAmount - item.itemCost;
-            playerInventory.inventoryList.Add(this);
-            playerInventory.UpdateInventoryUI(this.gameObject);
-        }
-    }
+            if(player.goldAmount >= item.itemCost && playerInventory.inventoryList.Count <= playerInventory.inventorySpace)
+            {
+                soundManager.PlayCoinsAudio_1();
+                player.goldAmount = player.goldAmount - item.itemCost;
+                playerInventory.UpdateInventoryUI(this.gameObject);
+            }
+            else if(playerInventory.inventoryList.Count > playerInventory.inventorySpace)
+            {
+                soundManager.PlayAlertAudio();
+                playerInventory.SpaceAlert();
+            }
+            else if(player.goldAmount < item.itemCost)
+            {
+                soundManager.PlayAlertAudio();
+                playerInventory.CostAlert();
+            }
 
-    public void Sell()
-    {
-        playerInventory.inventoryList.Remove(this);
-        player.goldAmount = player.goldAmount + item.itemCost;
-        Destroy(this.gameObject);
+            playerInventory.inventoryList.RemoveAll(GameObject => GameObject == null);
+        }
+        else if(isSellable)
+        {
+            soundManager.PlayCoinsAudio_1();
+            player.goldAmount = player.goldAmount + item.itemCost;
+            playerInventory.inventoryList.RemoveAll(GameObject => GameObject == null);
+            Destroy(this.gameObject);
+        }
     }
 
     public void WearClothing()

@@ -8,7 +8,6 @@ public class UI_Shop : MonoBehaviour
 {
     public Transform container;
     private Transform shopItemTemplate;
-    private IShopCustomer shopCustomer;
 
     public GameObject inventoryUI;
 
@@ -26,9 +25,8 @@ public class UI_Shop : MonoBehaviour
         Hide();
     }
 
-    public void Show(IShopCustomer shopCustomer)
+    public void Show()
     {
-        this.shopCustomer = shopCustomer;
         gameObject.SetActive(true);
         inventoryUI.SetActive(true);
     }

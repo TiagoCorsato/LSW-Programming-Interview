@@ -6,6 +6,12 @@ public class ShopManager : MonoBehaviour
 {
     public GameObject shopInterior;
     public GameObject gameMap;
+    SoundManager soundManager;
+
+    void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +19,7 @@ public class ShopManager : MonoBehaviour
         {
             shopInterior.SetActive(true);
             gameMap.SetActive(false);
+            soundManager.PlayChickenAudio_1();
         }
     }
 
